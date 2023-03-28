@@ -1,0 +1,20 @@
+{% extends '_base.html' %}
+
+{% block page_title %}
+    Update Record
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5 border border-dark">
+        <h3>Update Record</h3>
+        <form method="POST" , class="container mt-5">
+            {% csrf_token %}
+            <table class="table table-bordered">
+                <div class="container">
+                    {{ form.as_table }}
+                </div>
+            </table>
+            <button type="submit" class="btn btn-primary mb-3">Update</button>
+        </form>
+    </div>
+{% endblock %}

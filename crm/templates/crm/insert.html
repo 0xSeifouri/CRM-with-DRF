@@ -1,0 +1,39 @@
+{% extends '_base.html' %}
+
+{% block page_title %}
+    Insert Record
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5 border border-dark">
+        <h3>Add New Record</h3>
+        <form method="post" , class="container mt-5">
+            {% csrf_token %}
+            <div class="mb-3">
+                <input type="text" class="form-control" name="first_name" placeholder="First Name">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" name="last_name" placeholder="Last Name">
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" name="email" placeholder="Email">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" name="phone" placeholder="Phone">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" name="address" placeholder="Address">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" name="city" placeholder="City">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" name="state" placeholder="State">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" name="zipcode" placeholder="Zipcode">
+            </div>
+            <button type="submit" class="btn btn-primary mb-3">Add</button>
+        </form>
+    </div>
+{% endblock %}

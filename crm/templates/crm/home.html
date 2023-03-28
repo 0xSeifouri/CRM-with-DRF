@@ -1,0 +1,41 @@
+{% extends '_base.html' %}
+
+{% block page_title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead style="background-color: rgb(150, 150, 150)">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Firstname</th>
+                <th scope="col">Lastname</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+                <th scope="col">Address</th>
+                <th scope="col">Zipcode</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for record in serialize %}
+                <tr>
+                    <td><a href="{% url 'retrieve' record.id %}">{{ record.id }}</a></td>
+                    <td>{{ record.first_name|title }}</td>
+                    <td>{{ record.last_name|title }}</td>
+                    <td>{{ record.email }}</td>
+                    <td>{{ record.phone }}</td>
+                    <td>{{ record.city|title }}</td>
+                    <td>{{ record.state|title }}</td>
+                    <td>{{ record.address|title }}</td>
+                    <td>{{ record.zipcode }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+

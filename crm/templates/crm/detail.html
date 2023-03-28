@@ -1,0 +1,31 @@
+{% extends '_base.html' %}
+
+{% block page_title %}
+    Customer {{ details.id }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                Customer ID : {{ details.id }}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ details.first_name|title }} {{ details.last_name|title }}</h5>
+                <p class="card-text"><strong>Email:</strong> {{ details.email }}</p>
+                <p class="card-text"><strong>Phone:</strong> {{ details.phone }}</p>
+                <p class="card-text"><strong>City:</strong> {{ details.city|title }}</p>
+                <p class="card-text"><strong>State:</strong> {{ details.state|title }}</p>
+                <p class="card-text"><strong>Address:</strong> {{ details.address|title }}</p>
+                <p class="card-text"><strong>Zipcode:</strong> {{ details.zipcode }}</p><br>
+                <a href="{% url 'destroy' details.id %}" class="btn btn-danger">Delete</a>
+                <a href="{% url 'update' details.id %}" class="btn btn-success">Update</a>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <a href="{% url 'home' %}" class="btn btn-dark">Back</a>
+        </div>
+    </div>
+
+{% endblock %}

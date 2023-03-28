@@ -1,0 +1,22 @@
+{% extends '_base.html' %}
+
+{% block page_title %}
+    Login
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5 border border-dark">
+        <h2>Login</h2>
+        <form method="post" class="container mt-5">
+            {% csrf_token %}
+            <div class="mb-3">
+                <input type="text" class="form-control" name="username" placeholder="Username" required>
+            </div>
+            <br>
+            <div class="mb-3">
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary mb-3">Login</button>
+        </form>
+    </div>
+{% endblock %}
